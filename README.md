@@ -1,35 +1,30 @@
-# CMP_7005_Prac1
+# CMP7005_PRAC1_Final
 
-## CMP7005 Programming for Data Analysis Reassessment
+## Project Purpose
 
-This project supports the reassessment for **CMP7005 Programming for Data Analysis**. It demonstrates a complete Python workflow from raw air quality data to data cleaning, exploratory data analysis, machine learning, and an interactive Streamlit application.
+This repository contains a complete reassessment project for **CMP7005 Programming for Data Analysis**. The project demonstrates a Python workflow from raw data handling to exploratory data analysis, machine learning, and an interactive Streamlit application using Indian air quality data.
 
 ## Dataset
 
-The supplied assessment data contains daily Indian city air quality records from 2015 to 2020. The raw data is provided as separate city CSV files and is combined into one processed dataset for analysis.
+The supplied assessment data contains daily air quality records for 26 Indian cities between 2015 and 2020. The raw data is provided as separate city CSV files and is combined into one processed dataset for analysis.
 
-Main variables include:
+Main variables include City, Date, PM2.5, PM10, NO, NO2, NOx, NH3, CO, SO2, O3, Benzene, Toluene, Xylene, AQI, and AQI_Bucket.
 
-- City and Date
-- PM2.5, PM10, NO, NO2, NOx, NH3, CO, SO2, O3
-- Benzene, Toluene, Xylene
-- AQI and AQI_Bucket
+## Main Functionality
 
-## Main Features
-
-- Loads and combines all supplied city CSV files
-- Performs dataset inspection and missing value analysis
-- Cleans dates, numeric pollutant fields, duplicates, and invalid negative values
-- Creates year, month, month name, and season features
-- Provides univariate, bivariate, and multivariate EDA
-- Compares regression models for AQI prediction
-- Saves the best trained model for reuse
-- Provides a multipage Streamlit GUI for data overview, EDA, and prediction
+- Loads and validates all 26 city CSV files.
+- Combines the raw files into one reproducible processed dataset.
+- Performs missing-value, duplicate, descriptive, temporal, city-level, and pollutant relationship analysis.
+- Builds and compares regression models for AQI prediction.
+- Tests Random Forest hyperparameter optimisation using GridSearchCV.
+- Saves the final AQI prediction model.
+- Provides a multipage Streamlit application for data overview, EDA, and AQI prediction.
+- Includes GitHub and application screenshot evidence.
 
 ## Project Structure
 
 ```text
-CMP_7005_Prac1/
+CMP7005_PRAC1_Final/
 ??? app/
 ?   ??? app.py
 ?   ??? pages/
@@ -38,66 +33,60 @@ CMP_7005_Prac1/
 ??? data/
 ?   ??? raw/
 ?   ??? processed/
+??? docs/
 ??? models/
 ??? notebooks/
 ??? scripts/
 ??? src/
-??? requirements.txt
-??? README.md
 ??? .gitignore
+??? README.md
+??? requirements.txt
 ```
 
 ## Installation
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-## Run the Analysis Pipeline
+## Run the Pipeline
 
 ```bash
 python scripts/run_pipeline.py
 ```
 
-This creates the combined processed dataset, trains the model, saves the model comparison table, and stores the trained model.
+The pipeline combines the raw data, compares models, runs Random Forest optimisation, saves model results, and stores the final trained model.
 
-## Run the Streamlit Application
-
-```bash
-streamlit run app/app.py
-```
-
-If the `streamlit` command is not recognised, use:
+## Run the Notebook
 
 ```bash
-python -m streamlit run app/app.py
+python -m notebook
 ```
 
-## Notebook
-
-The main academic notebook is:
+Open:
 
 ```text
 notebooks/CMP7005_PRAC1.ipynb
 ```
 
-It contains the assessment narrative, code cells, EDA sections, model-building section, application-development summary, version-control evidence placeholders, reflection placeholders, and final compliance audit.
+Then run all cells from top to bottom.
 
-## Model Summary
+## Run the Streamlit Application
 
-The current pipeline compares Linear Regression, Decision Tree, Random Forest, and Gradient Boosting regression models. Based on the generated evaluation table, Random Forest currently gives the strongest performance on the supplied dataset.
+```bash
+python -m streamlit run app/app.py
+```
 
-## Important Student Notes
+The app contains three user-facing sections: Data Overview, Exploratory Data Analysis, and Modelling and Prediction.
 
-Before submission, the student should:
+## Model Overview
 
-- Run the notebook from top to bottom
-- Add written interpretations below important outputs
-- Add genuine screenshots of the Streamlit app and GitHub commit history
-- Complete the reflection in their own words
-- Check the university AI-use declaration wording
-- Ensure all GitHub evidence is real and current
+The project compares Linear Regression, Decision Tree, Random Forest, Gradient Boosting, and a tuned Random Forest. The untuned Random Forest remains the final model because it produced the strongest RMSE on the held-out test set in the executed pipeline.
 
-## AI Use Declaration
+## Repository
 
-AI support was used to help structure, code, and review this project. The student must review, understand, test, and adapt the final work before submission.
+Final GitHub repository:
+
+```text
+https://github.com/GursevakSingh-ui/CMP7005_PRAC1_Final
+```

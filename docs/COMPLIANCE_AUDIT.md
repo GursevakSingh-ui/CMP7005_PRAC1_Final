@@ -1,41 +1,33 @@
 # CMP7005 Final Compliance Audit
 
-| Assessment Requirement | Implemented | Evidence or File | Remaining Action |
+| Assessment requirement | Status | Evidence | File or section |
 |---|---|---|---|
-| Data imported | Yes | `src/data_loader.py`, `scripts/run_pipeline.py` | None |
-| Multiple CSV files combined | Yes | `src/data_loader.py` | Explain merge reason in notebook narrative |
-| Dataset inspected | Yes | `notebooks/CMP7005_PRAC1.ipynb` | Run notebook and keep outputs |
-| Dataset dimensions reported | Yes | Notebook Task 1 | None after execution |
-| Column names and data types checked | Yes | Notebook Task 1 | None after execution |
-| Missing values assessed | Yes | `src/eda_functions.py`, notebook Task 2 | Add interpretation text |
-| Duplicate records assessed | Yes | `src/data_loader.py`, notebook Task 1 | None after execution |
-| Date variable parsed | Yes | `src/data_loader.py`, `src/preprocessing.py` | None |
-| Numeric pollutant handling | Yes | `src/preprocessing.py` | None |
-| Original/raw data preserved | Yes | `data/raw/` | None |
-| Clean processed data created | Yes | `data/processed/air_quality.csv` | None |
-| Feature engineering applied | Yes | `src/preprocessing.py` | Justify date features in notebook |
-| Fundamental data understanding | Yes | Notebook Task 2.1 | Add student interpretations |
-| Univariate EDA completed | Yes | Notebook Task 2.3 | Add interpretation below charts |
-| Bivariate EDA completed | Yes | Notebook Task 2.4 | Add interpretation below charts |
-| Multivariate EDA completed | Yes | Notebook Task 2.5 | Add interpretation below heatmap |
-| Analytical questions supported | Partial | Notebook EDA sections | Add answer-style summaries after running outputs |
-| AQI prediction objective defined | Yes | Notebook Task 3, `src/model.py` | None |
-| Target leakage considered | Yes | `src/model.py`, notebook text | None |
-| Train/test split used | Yes | `src/model.py` | None |
-| Encoding considered | Yes | `OneHotEncoder` in `src/model.py` | None |
-| Scaling considered | Yes | `StandardScaler` in `src/model.py` | None |
-| Missing values handled for model | Yes | `SimpleImputer` in `src/model.py` | None |
-| Model comparison completed | Yes | `models/model_comparison.csv` | Discuss model choice in notebook |
-| Model evaluated with regression metrics | Yes | `src/model.py`, `models/model_comparison.csv` | None |
-| Final model saved | Yes | `models/trained_model.pkl` | None |
-| GUI developed | Yes | `app/app.py` | Add screenshots |
-| Data Overview page included | Yes | `app/pages/data_overview.py` | None |
-| EDA page included | Yes | `app/pages/eda.py` | None |
-| Prediction page included | Yes | `app/pages/prediction.py` | None |
-| User input validation considered | Yes | Streamlit numeric bounds in prediction page | None |
-| README prepared | Yes | `README.md` | Add GitHub URL if required |
-| Requirements file prepared | Yes | `requirements.txt` | None |
-| Git repository connected | To complete locally | Git remote command | Push after commits |
-| GitHub commit evidence | To complete | GitHub screenshots | Student must capture screenshots |
-| Reflection included | Draft placeholder | Notebook Task 6 | Student must personalise |
-| AI-use acknowledgement included | Draft | Notebook and README | Adjust to required university wording |
+| Task 1: 26 raw city files loaded | Complete | Raw files retained and loaded by reusable function | `data/raw/`, `src/data_loader.py` |
+| Task 1: data combined | Complete | Combined dataset generated from raw files | `data/processed/air_quality.csv`, `scripts/run_pipeline.py` |
+| Task 1: dimensions, columns, types checked | Complete | Notebook inspection section reports shape, columns, types, and date range | `notebooks/CMP7005_PRAC1.ipynb` |
+| Task 1: duplicates checked | Complete | Exact duplicates and City-Date duplicates assessed | Notebook Task 1, `src/eda_functions.py` |
+| Task 1: missing values checked | Complete | Count and percentage table included | Notebook Task 2, `src/eda_functions.py` |
+| Task 2: fundamental understanding | Complete | Dataset scope, variables, cities, categories, and coverage discussed | Notebook Task 2 |
+| Task 2: preprocessing explained | Complete | Date conversion, numeric conversion, duplicate handling, and temporal features explained | Notebook Task 2, `src/preprocessing.py` |
+| Task 2: missing-data analysis | Complete | Missingness table, visualisation, and modelling implications discussed | Notebook Task 2 |
+| Task 2: univariate analysis | Complete | AQI, selected pollutants, and category distributions analysed | Notebook Task 2 |
+| Task 2: bivariate analysis | Complete | Pollutant-AQI, city, year, month, and season relationships analysed | Notebook Task 2 |
+| Task 2: multivariate analysis | Complete | Correlation matrix and ranked AQI correlations interpreted | Notebook Task 2 |
+| Task 2: unequal city coverage addressed | Complete | City date coverage and comparable-city limitation discussed | Notebook Task 2 |
+| Task 3: prediction target defined | Complete | AQI regression objective stated | Notebook Task 3, `src/model.py` |
+| Task 3: leakage avoided | Complete | AQI_Bucket excluded from model predictors | Notebook Task 3, `src/model.py` |
+| Task 3: feature preparation | Complete | Numeric scaling, imputation, and city encoding in pipeline | `src/model.py` |
+| Task 3: model comparison | Complete | Four baseline models plus tuned Random Forest compared | `models/model_comparison.csv`, Notebook Task 3 |
+| Task 3: optimisation | Complete | GridSearchCV integrated and reported | `scripts/run_pipeline.py`, `models/model_optimisation.json` |
+| Task 3: model interpretation | Complete | Feature importance and train-test comparison included | Notebook Task 3 |
+| Task 4: Data Overview works | Complete | Date metric bug fixed and page tested | `app/pages/data_overview.py`, screenshots |
+| Task 4: EDA page works | Complete | Filters and charts render with empty-data handling | `app/pages/eda.py`, screenshots |
+| Task 4: Prediction page works | Complete | Model loads and prediction controls work | `app/pages/prediction.py`, screenshots |
+| Task 4: navigation works | Complete | Single custom Streamlit navigation configured | `app/app.py`, `.streamlit/config.toml` |
+| Task 5: GitHub repository | Complete | Final repository pushed | GitHub repository |
+| Task 5: commit history evidence | Complete | Screenshot evidence included | `assets/screenshots/github_commit_history.png` |
+| Task 5: repository screenshot | Complete | Screenshot evidence included | `assets/screenshots/github_repository_structure.png` |
+| Task 5: README | Complete | Operational README included | `README.md` |
+| Task 6: reflection completed | Complete | Evidence-based reflection included | Notebook Task 6, `docs/STUDENT_REFLECTION.md` |
+| References | Complete | Genuine references included in notebook | Notebook References section |
+| AI-use acknowledgement | Complete | AI-use statement included | Notebook AI Use Declaration |
